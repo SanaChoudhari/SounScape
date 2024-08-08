@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Home - MusicApp</title>
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            background: url('/images/customer.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #AFDD5F; /* Light green color for heading */
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #e0e0e0; /* Light grey for paragraph */
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #0FA4AF; /* Teal button background color */
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background-color: #00796b; /* Darker teal on hover */
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #e0e0e0; /* Light grey for footer */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to MusicApp</h1>
+        <p>Your one-stop destination for exploring and enjoying the best music. Discover new songs, artists, and more!</p>
+        <a href="/viewsongs" class="button">Explore Songs</a>
+        <footer>
+            &copy; 2024 MusicApp. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

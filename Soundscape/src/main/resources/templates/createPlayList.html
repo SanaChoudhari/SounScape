@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Playlist - MusicApp</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/images/adminhome.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #0FA4AF; /* Cool tone color */
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #AFDD5F; /* Light cool tone color */
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: calc(100% - 22px);
+            margin-bottom: 20px;
+            background: #003135; /* Darker input background */
+            color: #fff; /* Text color for better contrast */
+        }
+
+        .checkbox-group {
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .checkbox-group label {
+            margin-left: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #024950; /* Dark teal */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003135; /* Darker cool tone color */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Playlist</h1>
+        <form action="/addPlayList" method="post">
+            <label for="name">Playlist Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <div class="checkbox-group">
+                <!-- Example songs. Replace with Thymeleaf or server-side template logic for dynamic rows. -->
+                <div th:each="song : ${songList}">
+                    <input type="checkbox" id="song-[[${song.id}]]" name="songs" th:value="${song.id}">
+                    <label for="song-[[${song.id}]]" th:text="${song.songName}"></label>
+                </div>
+            </div>
+
+            <input type="submit" value="Add Playlist">
+        </form>
+    </div>
+</body>
+</html>

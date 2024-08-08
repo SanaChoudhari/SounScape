@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home - MusicApp</title>
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            background: url('/images/adminhome.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #0FA4AF; /* Cool tone color */
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        a {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 18px;
+            color: #fff;
+            background-color: #024950; /* Dark teal */
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 1px solid #003135; /* Darker teal */
+        }
+
+        a:hover {
+            background-color: #003135; /* Darker cool tone color */
+            transform: translateY(-2px);
+        }
+
+        .links-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, Admin!</h1>
+        <div class="links-container">
+            <a href="/map_addSong">Add Songs</a>
+            <a href="/map_DisplaySong">View Songs</a>
+            <a href="/map_createPlayList">Create Playlist</a>
+            <a href="/map_viewPlayList">View Playlist</a>
+        </div>
+    </div>
+</body>
+</html>

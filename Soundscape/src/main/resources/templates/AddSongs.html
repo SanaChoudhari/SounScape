@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Song - MusicApp</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/images/adminhome.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+
+        .container {
+            background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #0FA4AF; /* Cool tone color */
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #AFDD5F; /* Light cool tone color */
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: #003135; /* Darker input background */
+            color: #fff; /* Text color for better contrast */
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0FA4AF; /* Cool tone color on focus */
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #024950; /* Dark teal */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003135; /* Darker cool tone color */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add a Song</h1>
+        <form action="/add_Song" method="post">
+            <label for="songName">Song Name:</label>
+            <input type="text" id="songName" name="songName" required />
+
+            <label for="artist">Song Artist:</label>
+            <input type="text" id="artist" name="artist" required />
+
+            <label for="genre">Song Genre:</label>
+            <input type="text" id="genre" name="genre" required />
+
+            <label for="link">Song Link:</label>
+            <input type="text" id="link" name="link" required />
+
+            <input type="submit" value="Add Song" />
+        </form>
+    </div>
+</body>
+</html>

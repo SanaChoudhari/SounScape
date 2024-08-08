@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Failed - MusicApp</title>
+    <style>
+           body {
+            font-family: 'Arial', sans-serif;
+            background: url('/images/Register.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(0, 49, 53, 0.85); /* Dark semi-transparent background */
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #AFDD5E; /* Light green for heading */
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        p {
+            color: #e0e0e0; /* Light grey for text */
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #0FA4AF; /* Teal color for button */
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: 1px solid #fff;
+        }
+
+        a:hover {
+            background-color: #00796b; /* Darker teal on hover */
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Failed</h1>
+        <p>The email address you entered already exists. Please use a different email address.</p>
+        <a href="/map_register">Click here to register again</a>
+    </div>
+</body>
+</html>

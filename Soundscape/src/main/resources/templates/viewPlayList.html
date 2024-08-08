@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlists - MusicApp</title>
+    <style>
+  body {
+            font-family: 'Arial', sans-serif;
+            background: url('/images/adminhome.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            dmisplay: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 1000px; /* Adjusted width for table */
+            padding: 30px;
+            box-sizing: border-box;
+            position: relative;
+            overflow-y: auto; /* Allow vertical scrolling */
+            max-height: 90vh; /* Ensure the container doesn't exceed viewport height */
+        }
+
+        h1 {
+            text-align: center;
+            color: #0FA4AF; /* Teal color for heading */
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        thead {
+            background-color: #003135; /* Dark teal background for the header */
+            color: #fff; /* White text color for visibility */
+            position: sticky;
+            top: 0; /* Ensures the header stays at the top */
+            z-index: 1; /* Keeps the header above the table body */
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        td {
+            color: #333; /* Dark color for better visibility of table content */
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #0FA4AF; /* Teal color for row hover effect */
+            color: #fff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        audio {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playlists</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Playlist ID</th>
+                    <th>Playlist Name</th>
+                    <th>Playlist Songs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="pl : ${playLists}">
+                    <td th:text="${pl.id}"></td>
+                    <td th:text="${pl.name}"></td>
+                    <td>
+                        <ul>
+                            <li th:each="s : ${pl.songs}">
+                                <span th:text="${s.songName}"></span>
+                                <audio controls>
+                                    <source th:src="${s.link}" type="audio/mpeg">
+                                </audio>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
